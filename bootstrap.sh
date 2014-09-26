@@ -1,11 +1,7 @@
 #!/bin/sh -e
+# use musl-cross for cross-compiler
 
-export PATH=$(pwd)/cross/bin:$(pwd)/utils:$PATH
-
-: ${A:=$(uname -m)}
-
-build cross-scripts/binutils-*
-build cross-scripts/gcc-*
+export PATH=/opt/cross/x86_64-linux-musl/bin:$(pwd)/utils:$PATH
 
 export CC="$A-unknown-linux-musl-gcc"
 export CFLAGS="-Os"
