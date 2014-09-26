@@ -9,9 +9,6 @@ export CC="x86_64-linux-musl-gcc"
 export CFLAGS="-Os"
 export LDFLAGS="-s"
 
-build cross-scripts/linux-headers-*
-build cross-scripts/musl-*
-
 build build-scripts/musl-*
 build build-scripts/binutils-*
 build build-scripts/gcc-*
