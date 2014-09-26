@@ -1,4 +1,4 @@
-url=http://landley.net/aboriginal/mirror/$name-$version.tar.bz2
+url=http://ftp.gnu.org/gnu/binutils/$name-$version.tar.bz2
 
 patches=binutils-screwinfo.patch
 
