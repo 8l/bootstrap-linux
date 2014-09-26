@@ -3,6 +3,8 @@
 
 export PATH=/opt/cross/x86_64-linux-musl/bin:$(pwd)/utils:$PATH
 
+: ${A:=$(uname -m)}
+
 export CC="x86_64-linux-musl-gcc"
 export CFLAGS="-Os"
 export LDFLAGS="-s"
