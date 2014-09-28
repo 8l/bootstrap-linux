@@ -20,6 +20,6 @@ Some todos:
  * Backport the GCC patches, so I can use 4.2.x, and then remove
    MPFR, MPC, and GMP
    
-Firefox OS build prerequisites:   
+bootstrap-linux build prerequisites:   
  * musl-cross 
    https://github.com/8l/musl-cross
