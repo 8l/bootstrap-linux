@@ -13,6 +13,6 @@ build build-scripts/musl-*
 build build-scripts/binutils-*
 build build-scripts/gcc-*
 build build-scripts/make-*
-build build-scripts/busybox-*
 build build-scripts/linux-*
+build build-scripts/busybox-*
 build build-scripts/finish
