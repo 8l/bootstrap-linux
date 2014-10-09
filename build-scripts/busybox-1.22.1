@@ -6,9 +6,9 @@ export CROSS_COMPILE="$A-linux-musl-"
 
 config() {
 	make allnoconfig KCONFIG_ALLCONFIG="$top"/busybox.config
-	ln -s ../../out/include/linux ./include/linux
-	ln -s ../../out/include/asm ./include/asm
-	ln -s ../../out/include/asm-generic ./include/asm-generic	
+	ln -s ../../../out/include/linux ./include/linux
+	ln -s ../../../out/include/asm ./include/asm
+	ln -s ../../../out/include/asm-generic ./include/asm-generic	
 }
 
 install() {
