@@ -2,7 +2,7 @@ url=http://www.kernel.org/pub/linux/kernel/v3.0/linux-$version.tar.bz2
 
 patches="linux-noperl-capflags.patch linux-noperl-headers.patch linux-noperl-timeconst.patch linux-posix-sed.patch linux-workaround-old-gcc.patch"
 
-export CROSS_COMPILE="$A-unknown-linux-musl-"
+export CROSS_COMPILE="$A-linux-musl-"
 ARCH=$A
 [ "$ARCH" = "i686" ] && ARCH=i386
 export ARCH
