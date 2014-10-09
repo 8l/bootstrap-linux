@@ -15,10 +15,7 @@ installed. If you don't feel like using it, you can just copy the files
 onto a filesystem of your choice and boot it.
 
 Some todos:
- * Fix the busybox patches so they work with latest busybox
- * Update to Linux 3.4 (after fixing those patches)
- * Backport the GCC patches, so I can use 4.2.x, and then remove
-   MPFR, MPC, and GMP
+ * bootloader merge
    
 bootstrap-linux build prerequisites:   
  * musl-cross 
