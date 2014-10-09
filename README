@@ -23,3 +23,9 @@ Some todos:
 bootstrap-linux build prerequisites:   
  * musl-cross 
    https://github.com/8l/musl-cross
+   
+Building bootstrap-linux:
+ ./bootstrap.sh
+ //after gcc build error, uncomment next line in build-scripts/gcc-4.7.4
+ //this is lazy solution. ;)
+ # gccprereqs
