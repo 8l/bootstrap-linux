@@ -58,23 +58,22 @@ gccprereqs() {
     if [ ! -e gcc-$GCC_VERSION/gmp ]
     then
         fetchextract2 ftp://ftp.gmplib.org/pub/gmp/ gmp-$GMP_VERSION .tar.bz2
-        # mv gmp-$GMP_VERSION gcc-$GCC_VERSION/gmp
-        mv gmp-6.0.0 work/gcc-$GCC_VERSION/gmp
-	utils/munge-config-sub work/gcc-$GCC_VERSION/gmp/config.sub
+        mv gmp-6.0.0 gmp
+	../../utils/munge-config-sub gmp/config.sub
     fi
 
     if [ ! -e gcc-$GCC_VERSION/mpfr ]
     then
         fetchextract2 http://ftp.gnu.org/gnu/mpfr/ mpfr-$MPFR_VERSION .tar.bz2
-        mv mpfr-$MPFR_VERSION work/gcc-$GCC_VERSION/mpfr
-	utils/munge-config-sub work/gcc-$GCC_VERSION/mpfr/config.sub
+        mv mpfr-$MPFR_VERSION mpfr
+	../../utils/munge-config-sub mpfr/config.sub
     fi
 
     if [ ! -e gcc-$GCC_VERSION/mpc ]
     then
         fetchextract2 http://www.multiprecision.org/mpc/download/ mpc-$MPC_VERSION .tar.gz
-        mv mpc-$MPC_VERSION work/gcc-$GCC_VERSION/mpc
-	utils/munge-config-sub work/gcc-$GCC_VERSION/mpc/config.sub
+        mv mpc-$MPC_VERSION mpc
+	../../utils/munge-config-sub mpc/config.sub
     fi
 }
 
@@ -84,6 +83,7 @@ prep() {
 	done
 
 	sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
+	gccprereqs
 	
 	for i in strsignal putenv random setenv strstr strtod strtol strtoul;do
 		culprit=libiberty/$i.c
@@ -91,9 +91,6 @@ prep() {
 		touch $culprit
 	done
 }
-
-# uncomment below line, after 1st gcc build error msg
-# gccprereqs
 
 build() {
 	make all-gcc
