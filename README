@@ -20,6 +20,8 @@ Some todos:
 bootstrap-linux build prerequisites:   
  * musl-cross 
    https://github.com/8l/musl-cross
+ * genext2fs
+   sudo apt-get install genext2fs
    
 Building bootstrap-linux:
  ./bootstrap.sh
