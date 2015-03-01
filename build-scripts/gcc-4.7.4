@@ -24,7 +24,7 @@ export LD_LIBRARY_PATH=$MUSL_CC_BASE/work/gcc-$GCC_VERSION/host-x86_64-linux-mus
 fetch2() {
     if [ ! -e "$MUSL_CC_BASE/src/$2" ]
     then
-        wget -O "$MUSL_CC_BASE/src/$2.part" -c "$1""$2"
+        wget --no-passive-ftp -O "$MUSL_CC_BASE/src/$2.part" -c "$1""$2"
         mv "$MUSL_CC_BASE/src/$2.part" "$MUSL_CC_BASE/src/$2"
     fi
     return 0
