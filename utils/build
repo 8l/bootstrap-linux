@@ -12,7 +12,7 @@ export A
 fetch() {
 	if [ "x$md5sum" != "x" ];then
 		if [ !-e "$srcdir/$src" -o "$(md5sum $srcdir/$src)" != "$md5sum  $srcdir/$src" ];then
-			wget --no-passive-ftp "$url" -O "$srcdir/$src"
+			wget --passive-ftp "$url" -O "$srcdir/$src"
 		fi
 	else
 		test -e "$srcdir/$src" || wget "$url" -O "$srcdir/$src"
