@@ -1,4 +1,5 @@
 #!/bin/sh -e
+# $A-linux-musl -> $A-alpine-linux-musl //if run this on alpine.
 
 : ${A:=$(uname -m)}
 export A
